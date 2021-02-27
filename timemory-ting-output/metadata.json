@@ -1,0 +1,1813 @@
+{
+ "timemory": {
+  "metadata": {
+   "info": {
+    "CPU_FEATURES": "FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 HLE AVX2 SMEP BMI2 ERMS INVPCID RTM FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT SGXLC MDCLEAR TSXFA IBRS STIBP L1DF SSBD",
+    "CPU_MODEL": "Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz",
+    "CPU_VENDOR": "GenuineIntel",
+    "LAUNCH_DATE": "02/26/21",
+    "LAUNCH_TIME": "21:40",
+    "TIMEMORY_API": "tim::project::timemory",
+    "TIMEMORY_GIT_DESCRIBE": "v3.1.0-168-g2d1eddd8",
+    "TIMEMORY_GIT_REVISION": "2d1eddd843e0fcb8c84507a11de12f75fbc3bfb9",
+    "TIMEMORY_VERSION": "3.2.0.dev4",
+    "USER": "root",
+    "CPU_FREQUENCY": 2900000000,
+    "HW_CONCURRENCY": 12,
+    "HW_PHYSICAL_CPU": 6,
+    "HW_L1_CACHE_SIZE": 32768,
+    "HW_L2_CACHE_SIZE": 262144,
+    "HW_L3_CACHE_SIZE": 12582912
+   },
+   "settings": {
+    "cereal_class_version": 2,
+    "TIMEMORY_ADD_SECONDARY": {
+     "cereal_class_version": 0,
+     "name": "add_secondary",
+     "environ": "TIMEMORY_ADD_SECONDARY",
+     "description": "Enable/disable components adding secondary (child) entries when available. E.g. suppress individual CUDA kernels, etc. when using Cupti components",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-add-secondary"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_ALLOW_SIGNAL_HANDLER": {
+     "name": "allow_signal_handler",
+     "environ": "TIMEMORY_ALLOW_SIGNAL_HANDLER",
+     "description": "Allow signal handling to be activated",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-allow-signal-handler"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_AUTO_OUTPUT": {
+     "name": "auto_output",
+     "environ": "TIMEMORY_AUTO_OUTPUT",
+     "description": "Generate output at application termination",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-auto-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_BANNER": {
+     "name": "banner",
+     "environ": "TIMEMORY_BANNER",
+     "description": "Notify about tim::manager creation and destruction",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_COLLAPSE_PROCESSES": {
+     "name": "collapse_processes",
+     "environ": "TIMEMORY_COLLAPSE_PROCESSES",
+     "description": "Enable/disable combining process-specific data",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-collapse-processes"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_COLLAPSE_THREADS": {
+     "name": "collapse_threads",
+     "environ": "TIMEMORY_COLLAPSE_THREADS",
+     "description": "Enable/disable combining thread-specific data",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-collapse-threads"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_COMPONENTS": {
+     "cereal_class_version": 0,
+     "name": "components",
+     "environ": "TIMEMORY_COMPONENTS",
+     "description": "A specification of components which is used by the library interface. This falls back to TIMEMORY_GLOBAL_COMPONENTS.",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_CONFIG_FILE": {
+     "name": "config_file",
+     "environ": "TIMEMORY_CONFIG_FILE",
+     "description": "Configuration file for timemory",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "-C",
+      "--timemory-config"
+     ],
+     "data_type": "string",
+     "value": "/Users/jrmadsen/.timemory.cfg;/Users/jrmadsen/.timemory.json;/Users/jrmadsen/.config/timemory.cfg;/Users/jrmadsen/.config/timemory.json"
+    },
+    "TIMEMORY_COUT_OUTPUT": {
+     "name": "cout_output",
+     "environ": "TIMEMORY_COUT_OUTPUT",
+     "description": "Write output to stdout",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-cout-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_CPU_AFFINITY": {
+     "name": "cpu_affinity",
+     "environ": "TIMEMORY_CPU_AFFINITY",
+     "description": "Enable pinning threads to CPUs (Linux-only)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-cpu-affinity"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_CRAYPAT": {
+     "name": "craypat_categories",
+     "environ": "TIMEMORY_CRAYPAT",
+     "description": "Configure the CrayPAT categories to collect",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_CTEST_NOTES": {
+     "name": "ctest_notes",
+     "environ": "TIMEMORY_CTEST_NOTES",
+     "description": "Write a CTestNotes.txt for each text output",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-ctest-notes"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_CUDA_EVENT_BATCH_SIZE": {
+     "cereal_class_version": 0,
+     "name": "cuda_event_batch_size",
+     "environ": "TIMEMORY_CUDA_EVENT_BATCH_SIZE",
+     "description": "Batch size for create cudaEvent_t in cuda_event components",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 5
+    },
+    "TIMEMORY_CUPTI_ACTIVITY_KINDS": {
+     "name": "cupti_activity_kinds",
+     "environ": "TIMEMORY_CUPTI_ACTIVITY_KINDS",
+     "description": "Specific cupti activity kinds to track",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-cupti-activity-kinds"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_CUPTI_ACTIVITY_LEVEL": {
+     "cereal_class_version": 0,
+     "name": "cupti_activity_level",
+     "environ": "TIMEMORY_CUPTI_ACTIVITY_LEVEL",
+     "description": "Default group of kinds tracked via CUpti Activity API",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-cupti-activity-level"
+     ],
+     "data_type": "int",
+     "value": 1
+    },
+    "TIMEMORY_CUPTI_DEVICE": {
+     "name": "cupti_device",
+     "environ": "TIMEMORY_CUPTI_DEVICE",
+     "description": "Target device for CUPTI hw counter collection",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-cupti-device"
+     ],
+     "data_type": "int",
+     "value": 0
+    },
+    "TIMEMORY_CUPTI_EVENTS": {
+     "name": "cupti_events",
+     "environ": "TIMEMORY_CUPTI_EVENTS",
+     "description": "Hardware counter event types to collect on NVIDIA GPUs",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-cupti-events"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_CUPTI_METRICS": {
+     "name": "cupti_metrics",
+     "environ": "TIMEMORY_CUPTI_METRICS",
+     "description": "Hardware counter metric types to collect on NVIDIA GPUs",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-cupti-metrics"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_DART_COUNT": {
+     "name": "dart_count",
+     "environ": "TIMEMORY_DART_COUNT",
+     "description": "Only echo this number of dart tags (see also: TIMEMORY_DART_OUTPUT)",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-dart-count"
+     ],
+     "data_type": "unsigned long long",
+     "value": 1
+    },
+    "TIMEMORY_DART_LABEL": {
+     "name": "dart_label",
+     "environ": "TIMEMORY_DART_LABEL",
+     "description": "Echo the category instead of the label (see also: TIMEMORY_DART_OUTPUT)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-dart-label"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_DART_OUTPUT": {
+     "name": "dart_output",
+     "environ": "TIMEMORY_DART_OUTPUT",
+     "description": "Write dart measurements for CDash",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-dart-output"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_DART_TYPE": {
+     "name": "dart_type",
+     "environ": "TIMEMORY_DART_TYPE",
+     "description": "Only echo this measurement type (see also: TIMEMORY_DART_OUTPUT)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-dart-type"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_DEBUG": {
+     "name": "debug",
+     "environ": "TIMEMORY_DEBUG",
+     "description": "Enable debug output",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-debug"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_DESTRUCTOR_REPORT": {
+     "name": "destructor_report",
+     "environ": "TIMEMORY_DESTRUCTOR_REPORT",
+     "description": "Configure default setting for auto_{list,tuple,hybrid} to write to stdout during destruction of the bundle",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-destructor-report"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_DIFF_OUTPUT": {
+     "name": "diff_output",
+     "environ": "TIMEMORY_DIFF_OUTPUT",
+     "description": "Generate a difference output vs. a pre-existing output (see also: TIMEMORY_INPUT_PATH and TIMEMORY_INPUT_PREFIX)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-diff-output"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_DISABLE_ALL_SIGNALS": {
+     "name": "disable_all_signals",
+     "environ": "TIMEMORY_DISABLE_ALL_SIGNALS",
+     "description": "Disable catching any signals",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_ENABLED": {
+     "name": "enabled",
+     "environ": "TIMEMORY_ENABLED",
+     "description": "Activation state of timemory",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-enabled"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_ENABLE_ALL_SIGNALS": {
+     "name": "enable_all_signals",
+     "environ": "TIMEMORY_ENABLE_ALL_SIGNALS",
+     "description": "Enable catching all signals",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_ENABLE_SIGNAL_HANDLER": {
+     "name": "enable_signal_handler",
+     "environ": "TIMEMORY_ENABLE_SIGNAL_HANDLER",
+     "description": "Enable signals in timemory_init",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-enable-signal-handler"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_ERT_ALIGNMENT": {
+     "name": "ert_alignment",
+     "environ": "TIMEMORY_ERT_ALIGNMENT",
+     "description": "Configure the alignment (in bits) when running ERT on CPU (0 == 8 * sizeof(T))",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_BLOCK_SIZE": {
+     "name": "ert_block_size",
+     "environ": "TIMEMORY_ERT_BLOCK_SIZE",
+     "description": "Configure the block size (number of threads per block) for ERT on GPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 1024
+    },
+    "TIMEMORY_ERT_GRID_SIZE": {
+     "name": "ert_grid_size",
+     "environ": "TIMEMORY_ERT_GRID_SIZE",
+     "description": "Configure the grid size (number of blocks) for ERT on GPU (0 == auto-compute)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_MAX_DATA_SIZE": {
+     "name": "ert_max_data_size",
+     "environ": "TIMEMORY_ERT_MAX_DATA_SIZE",
+     "description": "Configure the max data size when running ERT on CPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_MAX_DATA_SIZE_CPU": {
+     "name": "ert_max_data_size_cpu",
+     "environ": "TIMEMORY_ERT_MAX_DATA_SIZE_CPU",
+     "description": "Configure the max data size when running ERT on CPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_MAX_DATA_SIZE_GPU": {
+     "name": "ert_max_data_size_gpu",
+     "environ": "TIMEMORY_ERT_MAX_DATA_SIZE_GPU",
+     "description": "Configure the max data size when running ERT on GPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 500000000
+    },
+    "TIMEMORY_ERT_MIN_WORKING_SIZE": {
+     "name": "ert_min_working_size",
+     "environ": "TIMEMORY_ERT_MIN_WORKING_SIZE",
+     "description": "Configure the minimum working size when running ERT (0 == device specific)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_MIN_WORKING_SIZE_CPU": {
+     "name": "ert_min_working_size_cpu",
+     "environ": "TIMEMORY_ERT_MIN_WORKING_SIZE_CPU",
+     "description": "Configure the minimum working size when running ERT on CPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 64
+    },
+    "TIMEMORY_ERT_MIN_WORKING_SIZE_GPU": {
+     "name": "ert_min_working_size_gpu",
+     "environ": "TIMEMORY_ERT_MIN_WORKING_SIZE_GPU",
+     "description": "Configure the minimum working size when running ERT on GPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 10000000
+    },
+    "TIMEMORY_ERT_NUM_STREAMS": {
+     "name": "ert_num_streams",
+     "environ": "TIMEMORY_ERT_NUM_STREAMS",
+     "description": "Number of streams to use when launching kernels in ERT on the GPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 1
+    },
+    "TIMEMORY_ERT_NUM_THREADS": {
+     "name": "ert_num_threads",
+     "environ": "TIMEMORY_ERT_NUM_THREADS",
+     "description": "Number of threads to use when running ERT",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 0
+    },
+    "TIMEMORY_ERT_NUM_THREADS_CPU": {
+     "name": "ert_num_threads_cpu",
+     "environ": "TIMEMORY_ERT_NUM_THREADS_CPU",
+     "description": "Number of threads to use when running ERT on CPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 12
+    },
+    "TIMEMORY_ERT_NUM_THREADS_GPU": {
+     "name": "ert_num_threads_gpu",
+     "environ": "TIMEMORY_ERT_NUM_THREADS_GPU",
+     "description": "Number of threads which launch kernels when running ERT on the GPU",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long long",
+     "value": 1
+    },
+    "TIMEMORY_ERT_SKIP_OPS": {
+     "name": "ert_skip_ops",
+     "environ": "TIMEMORY_ERT_SKIP_OPS",
+     "description": "Skip these number of ops (i.e. ERT_FLOPS) when were set at compile time",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_FILE_OUTPUT": {
+     "name": "file_output",
+     "environ": "TIMEMORY_FILE_OUTPUT",
+     "description": "Write output to files",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-file-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_FLAMEGRAPH_OUTPUT": {
+     "name": "flamegraph_output",
+     "environ": "TIMEMORY_FLAMEGRAPH_OUTPUT",
+     "description": "Write a json output for flamegraph visualization (use chrome://tracing)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-flamegraph-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_FLAT_PROFILE": {
+     "name": "flat_profile",
+     "environ": "TIMEMORY_FLAT_PROFILE",
+     "description": "Set the label hierarchy mode to default to flat",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-flat-profile"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_GLOBAL_COMPONENTS": {
+     "name": "global_components",
+     "environ": "TIMEMORY_GLOBAL_COMPONENTS",
+     "description": "A specification of components which is used by multiple variadic bundlers and user_bundles as the fall-back set of components if their specific variable is not set. E.g. user_mpip_bundle will use this if TIMEMORY_MPIP_COMPONENTS is not specified",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-global-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_INPUT_EXTENSIONS": {
+     "name": "input_extensions",
+     "environ": "TIMEMORY_INPUT_EXTENSIONS",
+     "description": "File extensions used when searching for input files used in difference comparisons (see also: TIMEMORY_DIFF_OUTPUT)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-input-extensions"
+     ],
+     "data_type": "string",
+     "value": "json,xml"
+    },
+    "TIMEMORY_INPUT_PATH": {
+     "name": "input_path",
+     "environ": "TIMEMORY_INPUT_PATH",
+     "description": "Explicitly specify the input folder for difference comparisons (see also: TIMEMORY_DIFF_OUTPUT)",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-input-path"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_INPUT_PREFIX": {
+     "name": "input_prefix",
+     "environ": "TIMEMORY_INPUT_PREFIX",
+     "description": "Explicitly specify the prefix for input files used in difference comparisons (see also: TIMEMORY_DIFF_OUTPUT)",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-input-prefix"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_INSTRUCTION_ROOFLINE": {
+     "name": "instruction_roofline",
+     "environ": "TIMEMORY_INSTRUCTION_ROOFLINE",
+     "description": "Configure the roofline to include the hw counters required for generating an instruction roofline",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_JSON_OUTPUT": {
+     "name": "json_output",
+     "environ": "TIMEMORY_JSON_OUTPUT",
+     "description": "Write json output files",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-json-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_KOKKOS_COMPONENTS": {
+     "name": "kokkos_components",
+     "environ": "TIMEMORY_KOKKOS_COMPONENTS",
+     "description": "A specification of components which will be used by the interfaces which are designed for kokkos profiling. Priority: TRACE_COMPONENTS -> PROFILER_COMPONENTS -> COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-kokkos-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_MAX_DEPTH": {
+     "cereal_class_version": 0,
+     "name": "max_depth",
+     "environ": "TIMEMORY_MAX_DEPTH",
+     "description": "Set the maximum depth of label hierarchy reporting",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-max-depth"
+     ],
+     "data_type": "unsigned short",
+     "value": 65535
+    },
+    "TIMEMORY_MAX_THREAD_BOOKMARKS": {
+     "cereal_class_version": 0,
+     "name": "max_thread_bookmarks",
+     "environ": "TIMEMORY_MAX_THREAD_BOOKMARKS",
+     "description": "Maximum number of times a worker thread bookmarks the call-graph location w.r.t. the master thread. Higher values tend to increase the finalization merge time",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "unsigned long",
+     "value": 50
+    },
+    "TIMEMORY_MAX_WIDTH": {
+     "name": "max_width",
+     "environ": "TIMEMORY_MAX_WIDTH",
+     "description": "Set the maximum width for component label outputs",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-max-width"
+     ],
+     "data_type": "int",
+     "value": 120
+    },
+    "TIMEMORY_MEMORY_PRECISION": {
+     "cereal_class_version": 0,
+     "name": "memory_precision",
+     "environ": "TIMEMORY_MEMORY_PRECISION",
+     "description": "Set the precision for components with 'is_memory_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "short",
+     "value": -1
+    },
+    "TIMEMORY_MEMORY_SCIENTIFIC": {
+     "name": "memory_scientific",
+     "environ": "TIMEMORY_MEMORY_SCIENTIFIC",
+     "description": "Set the numerical reporting format for components with 'is_memory_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_MEMORY_UNITS": {
+     "name": "memory_units",
+     "environ": "TIMEMORY_MEMORY_UNITS",
+     "description": "Set the units for components with 'uses_memory_units' type-trait",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-memory-units"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_MEMORY_WIDTH": {
+     "name": "memory_width",
+     "environ": "TIMEMORY_MEMORY_WIDTH",
+     "description": "Set the output width for components with 'is_memory_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "short",
+     "value": -1
+    },
+    "TIMEMORY_MPIP_COMPONENTS": {
+     "name": "mpip_components",
+     "environ": "TIMEMORY_MPIP_COMPONENTS",
+     "description": "A specification of components which will be added to structures containing the 'user_mpip_bundle'. Priority: TRACE_COMPONENTS -> PROFILER_COMPONENTS -> COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-mpip-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_MPI_FINALIZE": {
+     "name": "mpi_finalize",
+     "environ": "TIMEMORY_MPI_FINALIZE",
+     "description": "Enable/disable timemory calling MPI_Finalize during timemory_finalize(...) invocations",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-mpi-finalize"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_MPI_INIT": {
+     "name": "mpi_init",
+     "environ": "TIMEMORY_MPI_INIT",
+     "description": "Enable/disable timemory calling MPI_Init / MPI_Init_thread during certain timemory_init(...) invocations",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-mpi-init"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_MPI_THREAD": {
+     "name": "mpi_thread",
+     "environ": "TIMEMORY_MPI_THREAD",
+     "description": "Call MPI_Init_thread instead of MPI_Init (see also: TIMEMORY_MPI_INIT)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-mpi-thread"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_MPI_THREAD_TYPE": {
+     "name": "mpi_thread_type",
+     "environ": "TIMEMORY_MPI_THREAD_TYPE",
+     "description": "MPI_Init_thread mode: 'single', 'serialized', 'funneled', or 'multiple' (see also: TIMEMORY_MPI_INIT and TIMEMORY_MPI_THREAD)",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-mpi-thread-type"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_NCCLP_COMPONENTS": {
+     "name": "ncclp_components",
+     "environ": "TIMEMORY_NCCLP_COMPONENTS",
+     "description": "A specification of components which will be added to structures containing the 'user_ncclp_bundle'. Priority: MPIP_COMPONENTS -> TRACE_COMPONENTS -> PROFILER_COMPONENTS -> COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-ncclp-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_NODE_COUNT": {
+     "name": "node_count",
+     "environ": "TIMEMORY_NODE_COUNT",
+     "description": "Total number of nodes used in application. Setting this value > 1 will result in aggregating N processes into groups of N / NODE_COUNT",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-node-count"
+     ],
+     "data_type": "int",
+     "value": 0
+    },
+    "TIMEMORY_NVTX_MARKER_DEVICE_SYNC": {
+     "name": "nvtx_marker_device_sync",
+     "environ": "TIMEMORY_NVTX_MARKER_DEVICE_SYNC",
+     "description": "Use cudaDeviceSync when stopping NVTX marker (vs. cudaStreamSychronize)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_OMPT_COMPONENTS": {
+     "name": "ompt_components",
+     "environ": "TIMEMORY_OMPT_COMPONENTS",
+     "description": "A specification of components which will be added to structures containing the 'user_ompt_bundle'. Priority: TRACE_COMPONENTS -> PROFILER_COMPONENTS -> COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-ompt-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_OUTPUT_PATH": {
+     "name": "output_path",
+     "environ": "TIMEMORY_OUTPUT_PATH",
+     "description": "Explicitly specify the output folder for results",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-output-path"
+     ],
+     "data_type": "string",
+     "value": "timemory-ting-output"
+    },
+    "TIMEMORY_OUTPUT_PREFIX": {
+     "name": "output_prefix",
+     "environ": "TIMEMORY_OUTPUT_PREFIX",
+     "description": "Explicitly specify a prefix for all output files",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-output-prefix"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_PAPI_ATTACH": {
+     "name": "papi_attach",
+     "environ": "TIMEMORY_PAPI_ATTACH",
+     "description": "Configure PAPI to attach to another process (see also: TIMEMORY_TARGET_PID)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_PAPI_EVENTS": {
+     "name": "papi_events",
+     "environ": "TIMEMORY_PAPI_EVENTS",
+     "description": "PAPI presets and events to collect (see also: papi_avail)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-papi-events"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_PAPI_FAIL_ON_ERROR": {
+     "name": "papi_fail_on_error",
+     "environ": "TIMEMORY_PAPI_FAIL_ON_ERROR",
+     "description": "Configure PAPI errors to trigger a runtime error",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-papi-fail-on-error"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_PAPI_MULTIPLEXING": {
+     "name": "papi_multiplexing",
+     "environ": "TIMEMORY_PAPI_MULTIPLEXING",
+     "description": "Enable multiplexing when using PAPI",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-papi-multiplexing"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_PAPI_OVERFLOW": {
+     "name": "papi_overflow",
+     "environ": "TIMEMORY_PAPI_OVERFLOW",
+     "description": "Value at which PAPI hw counters trigger an overflow callback",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-papi-overflow"
+     ],
+     "data_type": "int",
+     "value": 0
+    },
+    "TIMEMORY_PAPI_QUIET": {
+     "name": "papi_quiet",
+     "environ": "TIMEMORY_PAPI_QUIET",
+     "description": "Configure suppression of reporting PAPI errors/warnings",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-papi-quiet"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_PLOT_OUTPUT": {
+     "name": "plot_output",
+     "environ": "TIMEMORY_PLOT_OUTPUT",
+     "description": "Generate plot outputs from json outputs",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-plot-output"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_PRECISION": {
+     "name": "precision",
+     "environ": "TIMEMORY_PRECISION",
+     "description": "Set the global output precision for components",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-precision"
+     ],
+     "data_type": "short",
+     "value": -1
+    },
+    "TIMEMORY_PROFILER_COMPONENTS": {
+     "name": "profiler_components",
+     "environ": "TIMEMORY_PROFILER_COMPONENTS",
+     "description": "A specification of components which will be used by the interfaces which are designed for full python profiling. This specification will be overridden by a trace_components specification. Priority: COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-profiler-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_PYTHON_EXE": {
+     "name": "python_exe",
+     "environ": "TIMEMORY_PYTHON_EXE",
+     "description": "Configure the python executable to use",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-python-exe"
+     ],
+     "data_type": "string",
+     "value": "python"
+    },
+    "TIMEMORY_ROOFLINE_EVENTS_CPU": {
+     "name": "cpu_roofline_events",
+     "environ": "TIMEMORY_ROOFLINE_EVENTS_CPU",
+     "description": "Configure custom hw counters to add to the cpu roofline",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_ROOFLINE_EVENTS_GPU": {
+     "name": "gpu_roofline_events",
+     "environ": "TIMEMORY_ROOFLINE_EVENTS_GPU",
+     "description": "Configure custom hw counters to add to the gpu roofline",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_ROOFLINE_MODE": {
+     "name": "roofline_mode",
+     "environ": "TIMEMORY_ROOFLINE_MODE",
+     "description": "Configure the roofline collection mode. Options: 'op' 'ai'.",
+     "count": 1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-roofline-mode"
+     ],
+     "data_type": "string",
+     "value": "op"
+    },
+    "TIMEMORY_ROOFLINE_MODE_CPU": {
+     "name": "cpu_roofline_mode",
+     "environ": "TIMEMORY_ROOFLINE_MODE_CPU",
+     "description": "Configure the roofline collection mode for CPU specifically. Options: 'op', 'ai', 'mp'",
+     "count": 1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-cpu-roofline-mode"
+     ],
+     "data_type": "string",
+     "value": "mp"
+    },
+    "TIMEMORY_ROOFLINE_MODE_GPU": {
+     "name": "gpu_roofline_mode",
+     "environ": "TIMEMORY_ROOFLINE_MODE_GPU",
+     "description": "Configure the roofline collection mode for GPU specifically. Options: 'op' 'ai'.",
+     "count": 1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-gpu-roofline-mode"
+     ],
+     "data_type": "string",
+     "value": "op"
+    },
+    "TIMEMORY_ROOFLINE_TYPE_LABELS": {
+     "name": "roofline_type_labels",
+     "environ": "TIMEMORY_ROOFLINE_TYPE_LABELS",
+     "description": "Configure roofline labels/descriptions/output-files encode the list of data types",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_ROOFLINE_TYPE_LABELS_CPU": {
+     "name": "roofline_type_labels_cpu",
+     "environ": "TIMEMORY_ROOFLINE_TYPE_LABELS_CPU",
+     "description": "Configure labels, etc. for the roofline components for CPU (see also: TIMEMORY_ROOFLINE_TYPE_LABELS)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_ROOFLINE_TYPE_LABELS_GPU": {
+     "name": "roofline_type_labels_gpu",
+     "environ": "TIMEMORY_ROOFLINE_TYPE_LABELS_GPU",
+     "description": "Configure labels, etc. for the roofline components for GPU (see also: TIMEMORY_ROOFLINE_TYPE_LABELS)",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_SCIENTIFIC": {
+     "name": "scientific",
+     "environ": "TIMEMORY_SCIENTIFIC",
+     "description": "Set the global numerical reporting to scientific format",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-scientific"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_SEPARATOR_FREQ": {
+     "cereal_class_version": 0,
+     "name": "separator_frequency",
+     "environ": "TIMEMORY_SEPARATOR_FREQ",
+     "description": "Frequency of dashed separator lines in text output",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "long long",
+     "value": 0
+    },
+    "TIMEMORY_STACK_CLEARING": {
+     "name": "stack_clearing",
+     "environ": "TIMEMORY_STACK_CLEARING",
+     "description": "Enable/disable stopping any markers still running during finalization",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-stack-clearing"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_SUPPRESS_CONFIG": {
+     "name": "suppress_config",
+     "environ": "TIMEMORY_SUPPRESS_CONFIG",
+     "description": "Disable processing of setting configuration files",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-suppress-config",
+      "--timemory-no-config"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_SUPPRESS_PARSING": {
+     "name": "suppress_parsing",
+     "environ": "TIMEMORY_SUPPRESS_PARSING",
+     "description": "Disable parsing environment",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-suppress-parsing"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_TARGET_PID": {
+     "name": "target_pid",
+     "environ": "TIMEMORY_TARGET_PID",
+     "description": "Process ID for the components which require this",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "int",
+     "value": 92165
+    },
+    "TIMEMORY_TEXT_OUTPUT": {
+     "name": "text_output",
+     "environ": "TIMEMORY_TEXT_OUTPUT",
+     "description": "Write text output files",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-text-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_THROTTLE_COUNT": {
+     "name": "throttle_count",
+     "environ": "TIMEMORY_THROTTLE_COUNT",
+     "description": "Minimum number of laps before checking whether a key should be throttled",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-throttle-count"
+     ],
+     "data_type": "unsigned long",
+     "value": 10000
+    },
+    "TIMEMORY_THROTTLE_VALUE": {
+     "name": "throttle_value",
+     "environ": "TIMEMORY_THROTTLE_VALUE",
+     "description": "Average call time in nanoseconds when # laps > throttle_count that triggers throttling",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-throttle-value"
+     ],
+     "data_type": "unsigned long",
+     "value": 10000
+    },
+    "TIMEMORY_TIMELINE_PROFILE": {
+     "name": "timeline_profile",
+     "environ": "TIMEMORY_TIMELINE_PROFILE",
+     "description": "Set the label hierarchy mode to default to timeline",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-timeline-profile"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_TIME_FORMAT": {
+     "name": "time_format",
+     "environ": "TIMEMORY_TIME_FORMAT",
+     "description": "Customize the folder generation when TIMEMORY_TIME_OUTPUT is enabled (see also: strftime)",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-time-format"
+     ],
+     "data_type": "string",
+     "value": "%F_%I.%M_%p"
+    },
+    "TIMEMORY_TIME_OUTPUT": {
+     "name": "time_output",
+     "environ": "TIMEMORY_TIME_OUTPUT",
+     "description": "Output data to subfolder w/ a timestamp (see also: TIMEMORY_TIME_FORMAT)",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-time-output"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_TIMING_PRECISION": {
+     "name": "timing_precision",
+     "environ": "TIMEMORY_TIMING_PRECISION",
+     "description": "Set the precision for components with 'is_timing_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "short",
+     "value": -1
+    },
+    "TIMEMORY_TIMING_SCIENTIFIC": {
+     "name": "timing_scientific",
+     "environ": "TIMEMORY_TIMING_SCIENTIFIC",
+     "description": "Set the numerical reporting format for components with 'is_timing_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_TIMING_UNITS": {
+     "name": "timing_units",
+     "environ": "TIMEMORY_TIMING_UNITS",
+     "description": "Set the units for components with 'uses_timing_units' type-trait",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-timing-units"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_TIMING_WIDTH": {
+     "name": "timing_width",
+     "environ": "TIMEMORY_TIMING_WIDTH",
+     "description": "Set the output width for components with 'is_timing_category' type-trait",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [],
+     "data_type": "short",
+     "value": -1
+    },
+    "TIMEMORY_TRACE_COMPONENTS": {
+     "name": "trace_components",
+     "environ": "TIMEMORY_TRACE_COMPONENTS",
+     "description": "A specification of components which will be used by the interfaces which are designed for full profiling. These components will be subjected to throttling. Priority: COMPONENTS -> GLOBAL_COMPONENTS",
+     "count": -1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-trace-components"
+     ],
+     "data_type": "string",
+     "value": ""
+    },
+    "TIMEMORY_TREE_OUTPUT": {
+     "name": "tree_output",
+     "environ": "TIMEMORY_TREE_OUTPUT",
+     "description": "Write hierarchical json output files",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-tree-output"
+     ],
+     "data_type": "bool",
+     "value": true
+    },
+    "TIMEMORY_UPCXX_FINALIZE": {
+     "name": "upcxx_finalize",
+     "environ": "TIMEMORY_UPCXX_FINALIZE",
+     "description": "Enable/disable timemory calling upcxx::finalize() during timemory_finalize()",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-upcxx-finalize"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_UPCXX_INIT": {
+     "name": "upcxx_init",
+     "environ": "TIMEMORY_UPCXX_INIT",
+     "description": "Enable/disable timemory calling upcxx::init() during certain timemory_init(...) invocations",
+     "count": -1,
+     "max_count": 1,
+     "cmdline": [
+      "--timemory-upcxx-init"
+     ],
+     "data_type": "bool",
+     "value": false
+    },
+    "TIMEMORY_VERBOSE": {
+     "name": "verbose",
+     "environ": "TIMEMORY_VERBOSE",
+     "description": "Verbosity level",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-verbose"
+     ],
+     "data_type": "int",
+     "value": 0
+    },
+    "TIMEMORY_WIDTH": {
+     "name": "width",
+     "environ": "TIMEMORY_WIDTH",
+     "description": "Set the global output width for components",
+     "count": 1,
+     "max_count": -1,
+     "cmdline": [
+      "--timemory-width"
+     ],
+     "data_type": "short",
+     "value": -1
+    },
+    "command_line": [],
+    "environment": [
+     "./ting",
+     "--limit",
+     "10",
+     "google.com"
+    ]
+   },
+   "output": {
+    "json": [
+     {
+      "key": "ping_data",
+      "value": [
+       "timemory-ting-output/ping_data.json",
+       "timemory-ting-output/ping_data.tree.json"
+      ]
+     }
+    ],
+    "text": [
+     {
+      "key": "ping_data",
+      "value": [
+       "timemory-ting-output/ping_data.txt"
+      ]
+     }
+    ]
+   },
+   "environment": [
+    {
+     "key": "DYLD_INSERT_LIBRARIES",
+     "value": ""
+    },
+    {
+     "key": "HOME",
+     "value": "/Users/jrmadsen"
+    },
+    {
+     "key": "LD_PRELOAD",
+     "value": ""
+    },
+    {
+     "key": "PAT_RT_PERFCTR",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_ADD_SECONDARY",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_ALLOW_SIGNAL_HANDLER",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_AUTO_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_BANNER",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_COLLAPSE_PROCESSES",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_COLLAPSE_THREADS",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_CONFIG_FILE",
+     "value": "/Users/jrmadsen/.timemory.cfg;/Users/jrmadsen/.timemory.json;/Users/jrmadsen/.config/timemory.cfg;/Users/jrmadsen/.config/timemory.json"
+    },
+    {
+     "key": "TIMEMORY_COUT_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_CPU_AFFINITY",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_CRAYPAT",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_CTEST_NOTES",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_CUDA_EVENT_BATCH_SIZE",
+     "value": "5"
+    },
+    {
+     "key": "TIMEMORY_CUPTI_ACTIVITY_KINDS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_CUPTI_ACTIVITY_LEVEL",
+     "value": "1"
+    },
+    {
+     "key": "TIMEMORY_CUPTI_DEVICE",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_CUPTI_EVENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_CUPTI_METRICS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_CXX_PLOT_MODE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_DART_COUNT",
+     "value": "1"
+    },
+    {
+     "key": "TIMEMORY_DART_LABEL",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_DART_OUTPUT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_DART_TYPE",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_DEBUG",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_DESTRUCTOR_REPORT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_DIFF_OUTPUT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_DISABLE_ALL_SIGNALS",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_ENABLED",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_ENABLE_ALL_SIGNALS",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_ENABLE_SIGNAL_HANDLER",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_ERT_ALIGNMENT",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_BLOCK_SIZE",
+     "value": "1024"
+    },
+    {
+     "key": "TIMEMORY_ERT_GRID_SIZE",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_MAX_DATA_SIZE",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_MAX_DATA_SIZE_CPU",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_MAX_DATA_SIZE_GPU",
+     "value": "500000000"
+    },
+    {
+     "key": "TIMEMORY_ERT_MIN_WORKING_SIZE",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_MIN_WORKING_SIZE_CPU",
+     "value": "64"
+    },
+    {
+     "key": "TIMEMORY_ERT_MIN_WORKING_SIZE_GPU",
+     "value": "10000000"
+    },
+    {
+     "key": "TIMEMORY_ERT_NUM_STREAMS",
+     "value": "1"
+    },
+    {
+     "key": "TIMEMORY_ERT_NUM_THREADS",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_ERT_NUM_THREADS_CPU",
+     "value": "12"
+    },
+    {
+     "key": "TIMEMORY_ERT_NUM_THREADS_GPU",
+     "value": "1"
+    },
+    {
+     "key": "TIMEMORY_ERT_SKIP_OPS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_FILE_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_FLAMEGRAPH_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_FLAT_PROFILE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_GLOBAL_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_INPUT_EXTENSIONS",
+     "value": "json,xml"
+    },
+    {
+     "key": "TIMEMORY_INPUT_PATH",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_INPUT_PREFIX",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_INSTRUCTION_ROOFLINE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_JSON_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_KOKKOS_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_LIBRARY_CTOR",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_MAX_DEPTH",
+     "value": "65535"
+    },
+    {
+     "key": "TIMEMORY_MAX_THREAD_BOOKMARKS",
+     "value": "50"
+    },
+    {
+     "key": "TIMEMORY_MAX_WIDTH",
+     "value": "120"
+    },
+    {
+     "key": "TIMEMORY_MEMORY_PRECISION",
+     "value": "-1"
+    },
+    {
+     "key": "TIMEMORY_MEMORY_SCIENTIFIC",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_MEMORY_UNITS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_MEMORY_WIDTH",
+     "value": "-1"
+    },
+    {
+     "key": "TIMEMORY_MPIP_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_MPI_FINALIZE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_MPI_INIT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_MPI_THREAD",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_MPI_THREAD_TYPE",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_NCCLP_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_NODE_COUNT",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_NVTX_MARKER_DEVICE_SYNC",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_OMPT_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_OUTPUT_PATH",
+     "value": "timemory-ting-output"
+    },
+    {
+     "key": "TIMEMORY_OUTPUT_PREFIX",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_PAPI_ATTACH",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_PAPI_EVENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_PAPI_FAIL_ON_ERROR",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_PAPI_MULTIPLEXING",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_PAPI_OVERFLOW",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_PAPI_QUIET",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_PING_DATA_ENABLED",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_PLOT_OUTPUT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_PRECISION",
+     "value": "-1"
+    },
+    {
+     "key": "TIMEMORY_PRINT_MIN",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_PRINT_STDDEV",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_PRINT_VARIANCE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_PROFILER_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_PYTHON_EXE",
+     "value": "python"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_EVENTS_CPU",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_EVENTS_GPU",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_MODE",
+     "value": "op"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_MODE_CPU",
+     "value": "mp"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_MODE_GPU",
+     "value": "op"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_TYPE_LABELS",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_TYPE_LABELS_CPU",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_ROOFLINE_TYPE_LABELS_GPU",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_SCIENTIFIC",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_SEPARATOR_FREQ",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_STACK_CLEARING",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_SUPPRESS_CONFIG",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_SUPPRESS_PARSING",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_TARGET_PID",
+     "value": "92165"
+    },
+    {
+     "key": "TIMEMORY_TEXT_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_THROTTLE_COUNT",
+     "value": "10000"
+    },
+    {
+     "key": "TIMEMORY_THROTTLE_VALUE",
+     "value": "10000"
+    },
+    {
+     "key": "TIMEMORY_TIMELINE_PROFILE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_TIME_FORMAT",
+     "value": "%F_%I.%M_%p"
+    },
+    {
+     "key": "TIMEMORY_TIME_OUTPUT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_TIMING_PRECISION",
+     "value": "-1"
+    },
+    {
+     "key": "TIMEMORY_TIMING_SCIENTIFIC",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_TIMING_UNITS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_TIMING_WIDTH",
+     "value": "-1"
+    },
+    {
+     "key": "TIMEMORY_TRACE_COMPONENTS",
+     "value": ""
+    },
+    {
+     "key": "TIMEMORY_TREE_OUTPUT",
+     "value": "true"
+    },
+    {
+     "key": "TIMEMORY_UPCXX_FINALIZE",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_UPCXX_INIT",
+     "value": "false"
+    },
+    {
+     "key": "TIMEMORY_VERBOSE",
+     "value": "0"
+    },
+    {
+     "key": "TIMEMORY_WIDTH",
+     "value": "-1"
+    },
+    {
+     "key": "USER",
+     "value": "root"
+    }
+   ]
+  }
+ }
+}
